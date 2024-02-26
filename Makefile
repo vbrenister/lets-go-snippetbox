@@ -1,6 +1,6 @@
-.PHONY: stat_server start_db stop_db
+.PHONY: start_server start_db stop_db
 
-stat_server:
+start_server:
 	@echo "Running server..."
 	@go run ./cmd/web/
 
