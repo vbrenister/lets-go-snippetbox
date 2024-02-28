@@ -22,11 +22,13 @@ type templateData struct {
 	Snippets    []models.Snippet
 	CurrentYear int
 	Form        any
+	Flash       string
 }
 
-func newTemplateData(r *http.Request) templateData {
+func (app *application) newTemplateData(r *http.Request) templateData {
 	return templateData{
 		CurrentYear: time.Now().Year(),
+		Flash:       app.sessionManager.PopString(r.Context(), "flash"),
 	}
 }
 

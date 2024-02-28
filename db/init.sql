@@ -31,3 +31,13 @@ INSERT INTO snippets (title, content, created, expires) VALUES (
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP + INTERVAL '7 days'
 );
+
+
+-- Create sessions related tables
+CREATE TABLE sessions (
+	token TEXT PRIMARY KEY,
+	data BYTEA NOT NULL,
+	expiry TIMESTAMPTZ NOT NULL
+);
+
+CREATE INDEX sessions_expiry_idx ON sessions (expiry);
