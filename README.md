@@ -16,17 +16,24 @@ This is Demo project build from lets-go book
 go mod download
 ```
 
-2. Start the database
+2. Generate TLS certificates
+```
+mkdir tls
+cd tls
+go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=localhost
+```
+
+3. Start the database
 ```
 make start_db
 ```
 
-3. Start the server
+4. Start the server
 ```
 make start_server
 ```
 
-4. Open the browser and navigate to `http://localhost:4000`
+5. Open the browser and navigate to `http://localhost:4000`
 
 > Above commands will use default command line arguments.
 
