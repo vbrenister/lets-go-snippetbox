@@ -18,9 +18,7 @@ go mod download
 
 2. Generate TLS certificates
 ```
-mkdir tls
-cd tls
-go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=localhost
+make generate_tls
 ```
 
 3. Start the database
