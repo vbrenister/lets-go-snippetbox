@@ -1,4 +1,4 @@
-.PHONY: start_server start_db stop_db generate_tls
+.PHONY: start_server start_db stop_db generate_tls test
 
 start_server:
 	@echo "Running server..."
@@ -16,3 +16,6 @@ generate_tls:
 	@mv cert.pem tls/cert.pem
 	@mv key.pem tls/key.pem
 	@echo "Certificates generated successfully!"
+
+test:
+	@go test -v ./...
